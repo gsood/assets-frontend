@@ -1,5 +1,8 @@
 require('jquery');
 
+modules.export = function() {
+    var $dynamicForm = $('form[data-dynamic-form]');
+
 module.exports = function() {
   var $dynamicForm = $('form[data-dynamic-form]');
 

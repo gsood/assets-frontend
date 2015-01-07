@@ -1,4 +1,5 @@
 require('jquery');
+
 module.exports =  function () {
   var $DOM = $("#content"),
     setup = function() {

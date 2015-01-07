@@ -1,4 +1,5 @@
 require('jquery');
+
 module.exports = function() {
   var $selectableInputs = $("label[class*=block-label]");
   $selectableInputs
@@ -13,7 +14,6 @@ module.exports = function() {
       if ($(this).attr('type') === 'radio') {
         $(this).closest('label').siblings().removeClass('selected');
       }
-
       $(this).closest('label').toggleClass('selected', $(this).prop("checked"));
     });
 };
