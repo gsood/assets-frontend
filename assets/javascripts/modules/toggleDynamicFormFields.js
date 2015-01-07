@@ -28,4 +28,5 @@ module.exports = function() {
       $toggledField.find(':checked').prop('checked', false);
     }
   });
+
 };

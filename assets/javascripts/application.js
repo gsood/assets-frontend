@@ -2,6 +2,7 @@
 require('jquery');
 
 require('validate');
+
 var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
