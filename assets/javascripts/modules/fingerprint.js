@@ -1,5 +1,5 @@
-var Mdtpdf = require('mdtpdf');
-var govuk = require('./GOVUK_helpers.js');
+var Mdtpdf = require('mdtpdf'),
+    govuk = require('./GOVUK_helpers.js');
 (function() {
   // TODO: obscure all references to fingerprint
   var fingerprint = new Mdtpdf({

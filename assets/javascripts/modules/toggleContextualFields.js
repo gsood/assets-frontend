@@ -1,5 +1,5 @@
 require('jquery');
-modules.export =  function () {
+module.exports =  function () {
   var $DOM = $("#content"),
     setup = function() {
       //select 'yes' option when user selects a contextual input

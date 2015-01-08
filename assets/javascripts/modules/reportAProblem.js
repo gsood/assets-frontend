@@ -1,6 +1,6 @@
 require('jquery');
 
-modiles.exports = function($) {
+module.exports = function() {
   // allow the user to report page errors
   var $reportErrorContainer = $('.report-error__content'),
       $submitButton = $reportErrorContainer.find('.button'),

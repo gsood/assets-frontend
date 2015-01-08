@@ -1,6 +1,6 @@
 require('jquery');
 
-modules.export = function(element ,ssoUrl) {
+module.exports = function(element ,ssoUrl) {
   var a, $target,
       clientSso,
       serverSso,

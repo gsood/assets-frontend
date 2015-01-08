@@ -104,21 +104,6 @@ module.exports = function(grunt) {
       }
     },
 
-    requirejs: {
-      dev: {
-        options: {
-          mainConfigFile: "require.conf.js",
-          out: '<%= dirs.snapshot %>/javascripts/application.min.js',
-        }
-      },
-      build: {
-        options: {
-          mainConfigFile: "require.conf.js",
-          out: '<%= dirs.public %>/javascripts/application.min.js',
-        }
-      }
-    },
-
     modernizr: {
       dist: {
         devFile: '<%= dirs.bower %>/modernizr/modernizr.js',
@@ -215,16 +200,19 @@ module.exports = function(grunt) {
     },
     browserify: {
       options: {
-        watch: true
+        watch: true,
+        browserifyOptions: {
+         debug: true
+        }
       },
       dev: {
         files: {
-          '<%= dirs.snapshot %>/javascripts/application.min.js': ['javascripts/modules/**/*.js']
+          '<%= dirs.snapshot %>/javascripts/application.min.js': ['javascripts/**/*.js']
         }
       },
       build: {
         files: {
-          '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/modules/**/*.js']
+          '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/**/*.min.js']
         }
       }
     }

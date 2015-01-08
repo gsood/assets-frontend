@@ -1,5 +1,5 @@
 require('jquery');
-modules.exports = function($) {
+module.exports = function() {
   var fields,
       $toggledField,
       $fieldToHide,

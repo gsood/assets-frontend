@@ -1,7 +1,6 @@
 require('jquery');
 module.exports = function() {
   var $selectableInputs = $("label[class*=block-label]");
-
   $selectableInputs
     .find('input[type=radio], input[type=checkbox]')
     .on('focus click', function() {
