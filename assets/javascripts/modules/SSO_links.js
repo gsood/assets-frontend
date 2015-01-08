@@ -6,7 +6,6 @@ module.exports = function(element ,ssoUrl) {
         serverSso,
         keepDefaultLinkBehaviour,
         destination;
-
     /**
      * Attach a one-time event handler for all global links
      */
