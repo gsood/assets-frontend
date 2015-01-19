@@ -134,11 +134,6 @@ module.exports = function(grunt) {
       build: {
         files: [{
           expand: true,
-          cwd: '../',
-          src: ['package.json'],
-          dest: '<%= dirs.dist %>/'
-        }, {
-          expand: true,
           cwd: '<%= dirs.govuk.template %>/public/images',
           src: ['**/*'],
           dest: '<%= dirs.dist %>/images'
@@ -185,6 +180,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     compress: {
       main: {
         options: {
@@ -218,6 +214,24 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.registerTask('version', 'Bumps the package.json version for publishing to npm', function() {
+    var version = grunt.option('release');
+
+    if (version && version !== '999-SNAPSHOT') {
+      var dist = grunt.config.get('dirs.dist'),
+          packageFile = grunt.file.read('package-build.json');
+
+      packageFile = grunt.template.process(packageFile, {data: {'version': version}});
+
+      grunt.file.write(dist + '/package.json', packageFile);
+      grunt.log.ok('Version bumped to ' + version);
+      grunt.log.ok('Wrote file to ' + dist + '/package.json');
+    }
+    else {
+      grunt.log.error("No package.json needs to be written");
+    }
+  });
+
   grunt.registerTask('default', [
     'clean',
     'bower:install',
@@ -238,6 +252,7 @@ module.exports = function(grunt) {
     'test',
     'modernizr',
     'copy:build',
+    'version',
     'compress'
   ]);
 
