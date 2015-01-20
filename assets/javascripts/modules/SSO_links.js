@@ -34,7 +34,7 @@ module.exports = function(element ,ssoUrl) {
             window.location = ssoUrl + '?payload=' + encodeURIComponent(data);
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            if(jqXHR.status == 401) {
+            if(jqXHR.status === 401) {
               keepDefaultLinkBehaviour = false;
               window.location.reload();
             }
