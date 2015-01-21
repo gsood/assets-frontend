@@ -55,6 +55,7 @@
     "karma-script-launcher": "~0.1.0",
     "karma-spec-reporter": "0.0.8",
     "load-grunt-tasks": "~0.3.0",
+    "modernizr": "^3.0.0-pre",
     "time-grunt": "~0.2.8"
   },
   "browserify": {
@@ -65,6 +66,7 @@
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "validate": "./node_modules/jquery-validation/src/core.js",
+    "delegate": "./node_modules/jquery-validation/src/delegate.js",
     "mdtpdf": "./javascripts/modules/mdtpdf.js",
     "stageprompt": "./bower_components/stageprompt/script/stageprompt.js"
   },
@@ -74,7 +76,8 @@
     },
     "validate": {
       "depends": [
-        "jquery"
+        "jquery",
+        "delegate"
       ]
     },
     "stageprompt": {
