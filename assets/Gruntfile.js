@@ -203,12 +203,15 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          '<%= dirs.snapshot %>/javascripts/application.min.js': ['javascripts/**/*.js']
+          '<%= dirs.snapshot %>/javascripts/application.min.js': ['javascripts/application.js']
         }
       },
       build: {
+        options: {
+          plugin: ['minifyify']
+        },
         files: {
-          '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/**/*.min.js']
+          '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/application.js']
         }
       }
     }
